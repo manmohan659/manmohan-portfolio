@@ -10,7 +10,7 @@ const Hero = () => {
           <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-500 p-1">
             <div className="w-full h-full rounded-full overflow-hidden">
               <img 
-                src={`${import.meta.env.BASE_URL}placeholder-profile.jpg`}
+                src={`${import.meta.env.BASE_URL}images/profile.jpg`}
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
