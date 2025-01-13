@@ -24,8 +24,8 @@ const Hero = () => {
           AI Researcher & Full Stack Developer
         </p>
         <div className="flex justify-center space-x-6">
-          <SocialLink icon={<Github size={24} />} href="https://github.com/yourusername" />
-          <SocialLink icon={<Linkedin size={24} />} href="https://linkedin.com/in/yourusername" />
+          <SocialLink icon={<Github size={24} />} href="https://github.com/manmohan659" />
+          <SocialLink icon={<Linkedin size={24} />} href="www.linkedin.com/in/manmohan-sharma-716661167" />
           <SocialLink icon={<Mail size={24} />} href="mailto:manmohan659@gmail.com" />
         </div>
       </div>
