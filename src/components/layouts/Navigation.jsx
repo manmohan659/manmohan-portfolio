@@ -38,8 +38,9 @@ const Navigation = () => {
   ];
 
   const socialLinks = [
-    { icon: 'github', href: 'https://github.com/yourusername' },
-    { icon: 'linkedin', href: 'https://linkedin.com/in/yourusername' },
+    { icon: 'github', href: 'https://github.com/manmohan659' },
+    { icon: 'linkedin', href: 'https://www.linkedin.com/in/manmohan-sharma-716661167' },
+    {icon: 'twitter', href:'https://x.com/manny__sharma'},
     { icon: 'mail', href: 'mailto:manmohan659@gmail.com' }
   ];
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { FaGithub, FaLinkedin,FaXTwitter,FaEnvelope } from 'react-icons/fa6'; 
 import SocialLink from '../common/SocialLink';
 
 const Hero = () => {
@@ -24,9 +24,10 @@ const Hero = () => {
           AI Researcher & Full Stack Developer
         </p>
         <div className="flex justify-center space-x-6">
-          <SocialLink icon={<Github size={24} />} href="https://github.com/manmohan659" />
-          <SocialLink icon={<Linkedin size={24} />} href="https://www.linkedin.com/in/manmohan-sharma-716661167" />
-          <SocialLink icon={<Mail size={24} />} href="mailto:manmohan659@gmail.com" />
+        <SocialLink icon={<FaGithub size={24} />} href="https://github.com/manmohan659" />
+        <SocialLink icon={<FaLinkedin size={24} />} href="https://www.linkedin.com/in/manmohan-sharma-716661167" />
+        <SocialLink icon={<FaXTwitter size={24} />} href="https://x.com/manny__sharma" />
+        <SocialLink icon={<FaEnvelope size={24} />} href="mailto:manmohan659@gmail.com" />
         </div>
       </div>
     </div>
