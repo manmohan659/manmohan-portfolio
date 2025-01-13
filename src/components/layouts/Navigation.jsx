@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { ThemeContext } from '../../context/ThemeContext';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Navigation = () => {
   const { isDark, setIsDark } = React.useContext(ThemeContext);
@@ -38,15 +40,31 @@ const Navigation = () => {
   ];
 
   const socialLinks = [
-    { icon: 'github', href: 'https://github.com/manmohan659' },
-    { icon: 'linkedin', href: 'https://www.linkedin.com/in/manmohan-sharma-716661167' },
-    {icon: 'twitter', href:'https://x.com/manny__sharma'},
-    { icon: 'mail', href: 'mailto:manmohan659@gmail.com' }
+    { 
+      icon: <FaGithub size={20} />,
+      href: 'https://github.com/manmohan659',
+      label: 'GitHub'
+    },
+    { 
+      icon: <FaLinkedin size={20} />,
+      href: 'https://www.linkedin.com/in/manmohan-sharma-716661167',
+      label: 'LinkedIn'
+    },
+    { 
+      icon: <FaXTwitter size={20} />,
+      href: 'https://x.com/manny__sharma', // Update with your X handle
+      label: 'X'
+    },
+    { 
+      icon: <FaEnvelope size={20} />,
+      href: 'mailto:manmohan659@gmail.com',
+      label: 'Email'
+    }
   ];
 
-  // Added click handler for menu items to close mobile menu
   const handleMenuClick = () => {
     setIsMenuOpen(false);
+    setShowConnect(false);
   };
 
   return (
@@ -54,11 +72,11 @@ const Navigation = () => {
       isScrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Desktop Navigation */}
         <div className="flex justify-between items-center h-16">
           <a 
             href="#home" 
             className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-            onClick={handleMenuClick}
           >
             MS
           </a>
@@ -70,13 +88,12 @@ const Navigation = () => {
                 key={item.label}
                 href={item.href}
                 className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors font-medium"
-                onClick={handleMenuClick}
               >
                 {item.label}
               </a>
             ))}
             
-            {/* Connect Button */}
+            {/* Desktop Connect Button */}
             <div className="relative" ref={connectRef}>
               <button
                 onMouseEnter={() => setShowConnect(true)}
@@ -93,19 +110,21 @@ const Navigation = () => {
                 >
                   {socialLinks.map((link) => (
                     <a
-                      key={link.icon}
+                      key={link.label}
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-blue-400 dark:hover:bg-gray-700"
+                      className="flex items-center px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-blue-400 dark:hover:bg-gray-700"
                     >
-                      {link.icon.charAt(0).toUpperCase() + link.icon.slice(1)}
+                      <span className="w-6">{link.icon}</span>
+                      <span className="ml-2">{link.label}</span>
                     </a>
                   ))}
                 </div>
               )}
             </div>
 
+            {/* Desktop Theme Toggle */}
             <button
               onClick={() => setIsDark(!isDark)}
               className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -132,7 +151,8 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4">
+          <div className="md:hidden py-4 bg-white dark:bg-gray-900 border-t dark:border-gray-800">
+            {/* Navigation Links */}
             {menuItems.map((item) => (
               <a
                 key={item.label}
@@ -143,6 +163,43 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
+            
+            {/* Mobile Social Links */}
+            <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+              <p className="px-2 mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">Connect</p>
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center px-2 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-blue-400 dark:hover:bg-gray-800"
+                  onClick={handleMenuClick}
+                >
+                  <span className="w-6">{link.icon}</span>
+                  <span className="ml-2">{link.label}</span>
+                </a>
+              ))}
+            </div>
+
+            {/* Mobile Theme Toggle */}
+            <div className="mt-4 px-2 pt-4 border-t border-gray-200 dark:border-gray-700">
+              <button
+                onClick={() => {
+                  setIsDark(!isDark);
+                  handleMenuClick();
+                }}
+                className="flex items-center w-full py-2 text-gray-700 dark:text-gray-300"
+              >
+                <span className="w-6">
+                  {isDark ? 
+                    <Sun className="w-5 h-5" /> : 
+                    <Moon className="w-5 h-5" />
+                  }
+                </span>
+                <span className="ml-2">{isDark ? 'Light Mode' : 'Dark Mode'}</span>
+              </button>
+            </div>
           </div>
         )}
       </div>
