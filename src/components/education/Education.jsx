@@ -4,18 +4,18 @@ import TimelineItem from '../common/TimelineItem';
 const Education = () => {
     const educationData = [
       {
-        title: "Master of Technology in Computer Science",
-        subtitle: "Indian Institute of Technology, Delhi",
-        period: "2018 - 2020",
+        title: "Master of Science in Computer Science (AI)",
+        subtitle: "University of San Francisco, San Francisco",
+        period: "2024 - 2026",
         description: "Specialized in Artificial Intelligence and Machine Learning. Research focused on deep learning applications in healthcare.",
-        extra: "9.2/10 GPA"
+        extra: "3.85/4 GPA"
       },
       {
-        title: "Bachelor of Technology in Computer Science",
-        subtitle: "Delhi Technological University",
-        period: "2014 - 2018",
+        title: "Bachelor of Engineering in Computer Science",
+        subtitle: "University of Mumbai",
+        period: "2016 - 2020",
         description: "Foundation in computer science with focus on software engineering and data structures.",
-        extra: "8.8/10 GPA"
+        extra: "7.5/10 GPA"
       }
     ];
   
