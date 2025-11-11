@@ -3,20 +3,18 @@ import TimelineItem from '../common/TimelineItem';
 
 const Education = () => {
     const educationData = [
-      {
-        title: "Master of Science in Computer Science (AI)",
-        subtitle: "University of San Francisco, San Francisco",
-        period: "2024 - 2026",
-        description: "Specialized in Artificial Intelligence and Machine Learning. Research focused on deep learning applications in healthcare.",
-        extra: "3.85/4 GPA"
-      },
-      {
-        title: "Bachelor of Engineering in Computer Science",
-        subtitle: "University of Mumbai",
-        period: "2016 - 2020",
-        description: "Foundation in computer science with focus on software engineering and data structures.",
-        extra: "7.5/10 GPA"
-      }
+        {
+          title: "Master of Science in Computer Science (AI)",
+          subtitle: "University of San Francisco, San Francisco",
+          period: "2024 - 2026",
+          description: "Specialized in Artificial Intelligence and Machine Learning. Research focused on deep learning applications in healthcare."
+        },
+        {
+          title: "Bachelor of Engineering in Computer Science",
+          subtitle: "University of Mumbai",
+          period: "2016 - 2020",
+          description: "Foundation in computer science with focus on software engineering and data structures."
+        }
     ];
   
     return (
