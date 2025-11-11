@@ -57,7 +57,7 @@ AI assistant with voice capabilities using 11 Labs & Gemini 2.2 Flash.
 
 ---
 
-## 📄 Research
+## 🔬 Research
 
 **[Respiratory Sound Classification for Remote Diagnosis](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3697586)**  
 Published research on ML techniques for respiratory sound classification using advanced audio processing and neural networks.
