@@ -4,9 +4,19 @@ import TimelineItem from '../common/TimelineItem';
 const Experience = () => {
   const experienceData = [
     {
+      title: "Full Stack Engineer",
+      subtitle: "Lender Toolkit (LTK) • San Francisco, USA",
+      period: "Feb 2026 – Present",
+      description: [
+        "Fine-tuned and served Qwen-3.5 32B on cloud GPUs (A100/H100) with vLLM + LoRA hot-swapping for domain-specific mortgage underwriting; cut inference cost 4× vs. API calls while matching GPT-4 level accuracy on internal evals.",
+        "Architected a multi-agent orchestration layer with LangGraph that chains document extraction, guideline lookup, and decisioning agents — end-to-end loan processing dropped from ~12 min manual review to <90s automated.",
+        "Built the full-stack serving infrastructure: React frontend, FastAPI backend, Redis task queues, and Kubernetes-managed model endpoints with auto-scaling on GPU utilization."
+      ]
+    },
+    {
       title: "Machine Learning Intern",
       subtitle: "Lender Toolkit (LTK) • San Francisco, USA",
-      period: "May 2025 – Present",
+      period: "May 2025 – Jan 2026",
       description: [
         "Built and shipped a mortgage-processing agent orchestrating multi-step tasks with LangChain, LangGraph, and LangSmith tracing; reduced p95 latency from 5.1s to 2.1s.",
         "Implemented an end-to-end guideline RAG pipeline with Firecrawl ingestion, Pinecone vector search, and dual rerankers (Cohere, AWS Bedrock) to boost retrieval quality.",
