@@ -4,35 +4,37 @@ import ProjectCard from './ProjectCard';
 const Projects = () => {
   const projectsData = [
     {
-      title: "ChatDB",
-      description: "A revolutionary way to interact with your database using natural language. Simply enter your credentials and start chatting with your data.",
-      tags: ['NLP', 'Databases', 'AI'],
-      demoUrl: "https://chatdb-demo.com"
+      title: "samosaChaat",
+      description: "A 1.4B parameter language model trained from scratch on 8xH100 GPUs. Full pipeline: tokenizer training, pretraining on ClimbMix, and SFT with baked-in identity. Chat with it live!",
+      tags: ['LLM', 'Deep Learning', 'NLP', 'PyTorch'],
+      demoUrl: "https://samosachaat.art",
+      githubUrl: "https://github.com/manmohan659/nanochat",
+      huggingfaceUrl: "https://huggingface.co/ManmohanSharma/nanochat-d24"
     },
     {
-      title: "Dynamic Memory Integration for Drones",
-      description: "Middleware solution for managing long-term memory in AI-driven drone systems with real-time updates.",
-      tags: ['AI', 'Drones', 'Memory Management'],
-      demoUrl: "https://drone-memory.demo.com"
+      title: "AutoDock",
+      description: "Autonomous drug discovery system targeting KRAS G12C cancer mutation. Uses GPU-accelerated molecular docking with an AI-driven genetic algorithm to search chemical space.",
+      tags: ['Drug Discovery', 'AI', 'GPU Computing', 'Bioinformatics'],
+      githubUrl: "https://github.com/manmohan659/autodock"
+    },
+    {
+      title: "CashCanvas",
+      description: "A zero-cost PWA that ingests your Chase data, crunches it locally in SQLite, syncs to Supabase, and paints your spending story in real-time charts.",
+      tags: ['PWA', 'SQLite', 'Supabase', 'Data Viz'],
+      githubUrl: "https://github.com/manmohan659/CashCanvas"
     },
     {
       title: "DALL Concept Model",
       description: "Cutting-edge LLM techniques for solving circuit design optimization problems.",
-      tags: ['LLM', 'Circuit Design', 'AI'],
-      demoUrl: "https://dall-concept.demo.com"
-    },
-    {
-      title: "LLM-based Reminder App",
-      description: "An AI assistant with voice capabilities using 11 labs voice and Gemini 2.2 Flash Experiment API.",
       status: "upcoming",
-      tags: ['LLM', 'Voice AI', 'Assistant']
+      tags: ['LLM', 'Circuit Design', 'AI']
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300" id="projects">
+    <section className="py-12 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300" id="projects">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h2 className="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
@@ -65,14 +67,38 @@ const Projects = () => {
                     Coming Soon! 🚀
                   </div>
                 ) : (
-                  <a 
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
-                  >
-                    Try it live →
-                  </a>
+                  <div className="flex gap-4">
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
+                      >
+                        Try it live →
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
+                      >
+                        GitHub →
+                      </a>
+                    )}
+                    {project.huggingfaceUrl && (
+                      <a
+                        href={project.huggingfaceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
+                      >
+                        HuggingFace →
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
             </div>
